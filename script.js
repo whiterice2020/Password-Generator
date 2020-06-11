@@ -28,38 +28,25 @@ function generatePassword(){
 
     // Take Users Choices and put them into pw generator
     
-    // Take users choices and enter into var
+    // Take users choices and enter array into finishedPW array
      
+    
+    
+    
     // Sets Number of Characters for the PW
     for (let index = 0; index < numOfChar.length; index++) {
       const element = numOfChar[index];
       if (confirmUpperCase) {
-        finishedPW.push
+        finishedPW.push(upperCharArray)
       }
 
     }
       console.log
-    // If Statements for all of users choices
+    
 
 
 
-      if (confirmSpecialCharacters) {
-        
-      }
-
-      if (confirmNumbers) {
-        
-      }
-
-      if (confirmLowerCase) {
-        
-      }
-
-
-
-      
-    Use .push command to push to 
-    console.log(num);
+    
 
 
   return getRandomLower
