@@ -6,23 +6,59 @@ var generateBtn = document.querySelector("#generate");
 //research comcat, push, 
 function generatePassword(){
 // Setting Variables
+    // Possible array for finished PW for user
+    var finishedPW =[]
+    
     var numOfChar = prompt("How many Characters");
-    var userUpperCase = confirm("Do you want Uppercase Letters?");
-    var userSpecialCharacters = confirm("Do you want Special Characters?");
-    var userNumbers = confirm("Do you want Numbers?");
-    var userLowerCase = confirm("Do you want Lowercase Letters");
+    var confirmUpperCase = confirm("Do you want Uppercase Letters?");
+    var confirmSpecialCharacters = confirm("Do you want Special Characters?");
+    var confirmNumbers = confirm("Do you want Numbers?");
+    var confirmLowerCase = confirm("Do you want Lowercase Letters");
     var lowerChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var num = '0123456789'; 
     var sym = '!@#$%^&*=-_';
     var upperCharArray=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     var lowerCharArray=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    // var numArray=[1,2,3,4,5,6,7,8,9,10]
+    var numArray=[1,2,3,4,5,6,7,8,9,10];
     var specialCharactersArray=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "_", "-" ]
+    
+    // array for password to get thrown into from if statements
+    var tmpUserPW=[]
 
     // Take Users Choices and put them into pw generator
+    
+    // Take users choices and enter into var
+     
+    // Sets Number of Characters for the PW
+    for (let index = 0; index < numOfChar.length; index++) {
+      const element = numOfChar[index];
+      if (confirmUpperCase) {
+        finishedPW.push
+      }
+
+    }
+      console.log
+    // If Statements for all of users choices
 
 
+
+      if (confirmSpecialCharacters) {
+        
+      }
+
+      if (confirmNumbers) {
+        
+      }
+
+      if (confirmLowerCase) {
+        
+      }
+
+
+
+      
+    Use .push command to push to 
     console.log(num);
 
 
