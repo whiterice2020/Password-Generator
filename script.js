@@ -19,10 +19,16 @@ function generatePassword(){
     var num = "0123456789"; 
     var sym = "!@#$%^&*=-_";
     var upperCharArray=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    var confirmUpperCharArray=[]
     var lowerCharArray=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    var confirmLowerCharArray=[]
     var numArray=["1","2","3","4","5","6","7","8","9"];
+    var confirmNumArray=[]
     var specialCharactersArray=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "_", "-" ]
-    
+    var confirmSpecialCharactersArray=[]
+    // const combinedArray=[]
+
+
     // Code check to see if numOfChar is working
     console.log ("numOfChar" + numOfChar);
     
@@ -31,49 +37,68 @@ function generatePassword(){
 
     // Take Users Choices and put them into pw generator
     
-    // Take users choices and enter array into finishedPW array
+    // Take users choices and enter array into eaches confirm array
      if (confirmUpperCase) {
       // Code Check
-      alert ("ConfirmUpperCase")
-      finishedPwArray.push(upperCharArray);
+      alert ("ConfirmUpperCase");
+      confirmUpperCharArray.push(upperCharArray);
+      console.log (confirmUpperCharArray);
      } 
      
      if (confirmSpecialCharacters) {
        // Code Check
-      alert ("confirmSpecialCharacters")
-      finishedPwArray.push(specialCharactersArray);
+      alert ("confirmSpecialCharacters");
+      confirmSpecialCharactersArray.push(specialCharactersArray);
+      console.log (confirmSpecialCharactersArray);
      }
 
      if (confirmNumbers) {
        // Code Check
-      alert ("confirmNumbers")
-      finishedPwArray.push(numArray);
+      alert ("confirmNumbers");
+      confirmNumArray.push(numArray);
+      console.log (confirmNumArray);
      }
      
      if (confirmLowerCase) {
        // Code Check
-      alert ("confirmLowerCase")
-      finishedPwArray.push(lowerCharArray);
+      alert ("confirmLowerCase");
+      confirmLowerCharArray.push(lowerCharArray);
+      console.log(confirmLowerCharArray);
+      
      }
      
-     
+    //  combines all confirm arrays into Array called combinedArray, this array is made by concat
+        function userPasswordArray() {
+          
+          document.write(combinedArray.concat(confirmLowerCharArray, confirmNumArray, confirmSpecialCharactersArray, confirmUpperCharArray));
+            console.log(userPasswordArray);
+            return userPasswordArray
+            
+        }
+        userPasswordArray
+          alert ("Create combined array");
+          console.log(combinedArray);
+          
+
+
     // Sets Number of Characters for the PW
     for (let index = 0; index <numOfChar.length; index++) {
       // const element = numOfChar[index];
       
       
         // var finishedPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
-        let finishPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
+        // let finishPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
       
 
       // Code Check to see if finishedPw var is working
-      console.log("finishedPw Var " + finishPw);
+      // console.log("finishedPw Var " + finishPw);
+      // console.log("finishedPwArray");
     }
 
     // end of for
     
   // return "This is where the results are of the code will be displayed"
-    // return finishPw;  
+    return combinedArray;  
   
   
   
