@@ -29,19 +29,22 @@ function generatePassword(){
     // Take Users Choices and put them into pw generator
     
     // Take users choices and enter array into finishedPW array
-     
-    
-    
+     if (confirmUppercase) {
+      finishedPW.push(upperCharArray)
+     } else if (confirmSpecialCharacters) {
+       finishedPW.push(specialCharactersArray)
+       
+     }
     
     // Sets Number of Characters for the PW
-    for (let index = 0; index < numOfChar.length; index++) {
-      const element = numOfChar[index];
-      if (confirmUpperCase) {
-        finishedPW.push(upperCharArray)
-      }
+    // for (let index = 0; index < numOfChar.length; index++) {
+    //   const element = numOfChar[index];
+    //   if (confirmUpperCase) {
+    //     finishedPW.push(upperCharArray)
+    //   }
 
-    }
-      console.log
+    // // }
+      // console.log finishedPW
     
 
 
@@ -49,7 +52,7 @@ function generatePassword(){
     
 
 
-  return getRandomLower
+  return upperCharArray
   // return "This is where the results are of the code will be displayed"
 }
 
