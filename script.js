@@ -23,6 +23,9 @@ function generatePassword(){
     var numArray=["1","2","3","4","5","6","7","8","9"];
     var specialCharactersArray=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "_", "-" ]
     
+    // Code check to see if numOfChar is working
+    console.log ("numOfChar" + numOfChar);
+    
     // array for password to get thrown into from if statements
     
 
@@ -30,19 +33,26 @@ function generatePassword(){
     
     // Take users choices and enter array into finishedPW array
      if (confirmUpperCase) {
-      alert ("Its starting to work")
-      finishedPwArray.push(upperChar);
+      // Code Check
+      alert ("ConfirmUpperCase")
+      finishedPwArray.push(upperCharArray);
      } 
      
      if (confirmSpecialCharacters) {
+       // Code Check
+      alert ("confirmSpecialCharacters")
       finishedPwArray.push(specialCharactersArray);
      }
 
      if (confirmNumbers) {
+       // Code Check
+      alert ("confirmNumbers")
       finishedPwArray.push(numArray);
      }
      
      if (confirmLowerCase) {
+       // Code Check
+      alert ("confirmLowerCase")
       finishedPwArray.push(lowerCharArray);
      }
      
@@ -52,13 +62,21 @@ function generatePassword(){
       // const element = numOfChar[index];
       
       
-        var finishedPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
+        // var finishedPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
+        let finishPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
       
+
+      // Code Check to see if finishedPw var is working
+      console.log("finishedPw Var " + finishPw);
     }
 
+    // end of for
     
-  return finishedPw
   // return "This is where the results are of the code will be displayed"
+    // return finishPw;  
+  
+  
+  
 }
 
 // Write password to the #password input
