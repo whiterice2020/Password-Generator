@@ -28,21 +28,24 @@ var generateBtn = document.querySelector("#generate");
     
     // Begin PW Creating
     function generatePassword(){
-
+    // Reset PW Array to empty string      
+      finalPassword = "";
       var numOfChar = prompt("How many Characters");
-      var confirmUpperCase = confirm("Do you want Uppercase Letters?");
-      var confirmSpecialCharacters = confirm("Do you want Special Characters?");
-      var confirmNumbers = confirm("Do you want Numbers?");
-      var confirmLowerCase = confirm("Do you want Lowercase Letters");
+
 
     // Code check to see if numOfChar is working
     console.log ("numOfChar" + numOfChar);
       
     // If statement for Min and Max Number of Characters
     
-    if (numOfChar > 7 && numOfChar < 127) {
-        console.log("number of char asking");
-        
+    if (numOfChar > 7 && numOfChar < 128) {
+        console.log("number of char asking", numOfChar);
+       
+        var confirmUpperCase = confirm("Do you want Uppercase Letters?");
+        var confirmSpecialCharacters = confirm("Do you want Special Characters?");
+        var confirmNumbers = confirm("Do you want Numbers?");
+        var confirmLowerCase = confirm("Do you want Lowercase Letters");
+
     // Take users choices and enter array into eaches confirm array
      if (confirmUpperCase) {
       // Code Check
@@ -74,33 +77,34 @@ var generateBtn = document.querySelector("#generate");
       
      }
 
-     
-// End of If statement for character requirement
-    }
-    // else {
-    //   alert("Must be between 8 and 128 characters")
-    //   console.log("Not enough chars");
-      
-    // }
-
      // Removes Commas from array
         password = password.replace(/,/g, "")
         console.log("Removed Commas from PW", password)
     // Sets Number of Characters for the PW
-    
-    for (let index = 0; index < numOfChar; index++) {
-        finalPassword += password.charAt(Math.floor(Math.random() * password.length));    
-        
-        // End of Random Char Generation with Character length
-    
-      }
+ 
+ for (let index = 0; index < numOfChar; index++) {
+     finalPassword += password.charAt(Math.floor(Math.random() * password.length));    
+     
+     // End of Random Char Generation with Character length
+ 
+   }
 
-    // end of for
+ // end of for
 
 
-  // return "This is where the results are of the code will be displayed"
-    console.log ("PW should be in the box now");
-    return finalPassword;  
+// return "This is where the results are of the code will be displayed"
+ console.log ("PW should be in the box now");
+ return finalPassword;  
+     
+// End of If statement for character requirement
+    }
+    else {
+      alert("Must be between 8 and 128 characters")
+      console.log("Not enough chars", numOfChar);
+      
+     }
+
+     
     
 
   
