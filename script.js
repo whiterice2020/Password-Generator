@@ -6,13 +6,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Setting Variables
     // Possible array for finished PW for user
-    var finishedPw
+    var finishedPw = "";
     
-    var numOfChar = prompt("How many Characters");
-    var confirmUpperCase = confirm("Do you want Uppercase Letters?");
-    var confirmSpecialCharacters = confirm("Do you want Special Characters?");
-    var confirmNumbers = confirm("Do you want Numbers?");
-    var confirmLowerCase = confirm("Do you want Lowercase Letters");
+    
+    
     var lowerChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var num = "0123456789"; 
@@ -25,8 +22,14 @@ var generateBtn = document.querySelector("#generate");
     var confirmNumArray=[];
     var specialCharactersArray=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "_", "-" ];
     var confirmSpecialCharactersArray=[];
-    // const combinedArray=[]
+    var combinedArray=[]
     function generatePassword(){
+
+      var numOfChar = prompt("How many Characters");
+      var confirmUpperCase = confirm("Do you want Uppercase Letters?");
+      var confirmSpecialCharacters = confirm("Do you want Special Characters?");
+      var confirmNumbers = confirm("Do you want Numbers?");
+      var confirmLowerCase = confirm("Do you want Lowercase Letters");
 
     // Code check to see if numOfChar is working
     console.log ("numOfChar" + numOfChar);
@@ -38,51 +41,40 @@ var generateBtn = document.querySelector("#generate");
     // Take users choices and enter array into eaches confirm array
      if (confirmUpperCase) {
       // Code Check
-      alert ("ConfirmUpperCase");
-      finishedPw+=confirmUpperCharArray.concat(upperCharArray);
-      console.log (confirmUpperCharArray);
+      // alert ("ConfirmUpperCase");
+      finishedPw += combinedArray.concat(upperCharArray);
+      console.log (combinedArray + finishedPw);
      } 
-     
+    //  console.log (confirmUpperCharArray + finishedPw);
+
      if (confirmSpecialCharacters) {
        // Code Check
-      alert ("confirmSpecialCharacters");
-      finishedPw+=confirmSpecialCharactersArray.concat(specialCharactersArray);
-      console.log (confirmSpecialCharactersArray);
+      // alert ("confirmSpecialCharacters");
+      finishedPw += combinedArray.concat(specialCharactersArray);
+      console.log (finishedPw + combinedArray);
      }
 
      if (confirmNumbers) {
        // Code Check
-      alert ("confirmNumbers");
-      finishedPw+=confirmNumArray.concat(numArray);
-      console.log (confirmNumArray);
+      // alert ("confirmNumbers");
+      finishedPw += confirmNumArray.concat(numArray);
+      console.log (finishedPw + confirmNumArray);
      }
      
      if (confirmLowerCase) {
        // Code Check
-      alert ("confirmLowerCase");
-      finishedPw+=confirmLowerCharArray.push(lowerCharArray);
-      console.log(confirmLowerCharArray);
+      // alert ("confirmLowerCase");
+      finishedPw += confirmLowerCharArray.concat(lowerCharArray);
+      console.log(finishedPw + confirmLowerCharArray);
       
      }
-
-      else
-        alert("Password must be more than 8 characters and less than 128 characters")
+     
+      
 
     }
-    //  combines all confirm arrays into Array called combinedArray, this array is made by concat
-        function userPasswordArray() {
-          
-          document.write(combinedArray.concat(confirmLowerCharArray, confirmNumArray, confirmSpecialCharactersArray, confirmUpperCharArray));
-            console.log(userPasswordArray);
-            return userPasswordArray
-            
-        }
-        userPasswordArray
-          alert ("Create combined array");
-          console.log(combinedArray);
-          
-
-
+    // Removes Commas from array
+        finishedPw = finishedPw.replace(/,/g, "")
+        console.log("Removed Commas from PW", finishedPw)
     // Sets Number of Characters for the PW
     for (let index = 0; index <numOfChar.length; index++) {
       // const element = numOfChar[index];
@@ -102,8 +94,7 @@ var generateBtn = document.querySelector("#generate");
   // return "This is where the results are of the code will be displayed"
     return combinedArray;  
   
-  
-  
+    
 }
 
 
