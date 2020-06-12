@@ -17,12 +17,16 @@ var generateBtn = document.querySelector("#generate");
     var upperCharArray=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var confirmUpperCharArray=[];
     var lowerCharArray=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var confirmLowerCharArray=[]
+    var confirmLowerCharArray=[];
     var numArray=["1","2","3","4","5","6","7","8","9"];
     var confirmNumArray=[];
     var specialCharactersArray=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "_", "-" ];
     var confirmSpecialCharactersArray=[];
-    var combinedArray=[]
+    var combinedArray=[];
+    var password = "";
+    var finalPassword = "";
+    
+    // Begin PW Creating
     function generatePassword(){
 
       var numOfChar = prompt("How many Characters");
@@ -37,62 +41,68 @@ var generateBtn = document.querySelector("#generate");
     // If statement for Min and Max Number of Characters
     
     if (numOfChar > 7 && numOfChar < 127) {
-
+        console.log("number of char asking");
+        
     // Take users choices and enter array into eaches confirm array
      if (confirmUpperCase) {
       // Code Check
       // alert ("ConfirmUpperCase");
-      finishedPw += combinedArray.concat(upperCharArray);
-      console.log (combinedArray + finishedPw);
+      password += combinedArray.concat(upperCharArray);
+      console.log (password);
      } 
     //  console.log (confirmUpperCharArray + finishedPw);
 
      if (confirmSpecialCharacters) {
        // Code Check
       // alert ("confirmSpecialCharacters");
-      finishedPw += combinedArray.concat(specialCharactersArray);
-      console.log (finishedPw + combinedArray);
+      password += combinedArray.concat(specialCharactersArray);
+      console.log (password);
      }
 
      if (confirmNumbers) {
        // Code Check
       // alert ("confirmNumbers");
-      finishedPw += confirmNumArray.concat(numArray);
-      console.log (finishedPw + confirmNumArray);
+      password += confirmNumArray.concat(numArray);
+      console.log (password);
      }
      
      if (confirmLowerCase) {
        // Code Check
       // alert ("confirmLowerCase");
-      finishedPw += confirmLowerCharArray.concat(lowerCharArray);
-      console.log(finishedPw + confirmLowerCharArray);
+      password += confirmLowerCharArray.concat(lowerCharArray);
+      console.log(password);
       
      }
+
      
-      
-
+// End of If statement for character requirement
     }
-    // Removes Commas from array
-        finishedPw = finishedPw.replace(/,/g, "")
-        console.log("Removed Commas from PW", finishedPw)
+    // else {
+    //   alert("Must be between 8 and 128 characters")
+    //   console.log("Not enough chars");
+      
+    // }
+
+     // Removes Commas from array
+        password = password.replace(/,/g, "")
+        console.log("Removed Commas from PW", password)
     // Sets Number of Characters for the PW
-    for (let index = 0; index <numOfChar.length; index++) {
-      // const element = numOfChar[index];
-      
-      
-        // var finishedPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
-        // let finishPw = finishedPwArray[Math.floor(Math.random() * numOfChar.length)];
-      
-
-      // Code Check to see if finishedPw var is working
-      // console.log("finishedPw Var " + finishPw);
-      // console.log("finishedPwArray");
-    }
+    
+    for (let index = 0; index < numOfChar; index++) {
+        finalPassword += password.charAt(Math.floor(Math.random() * password.length));    
+        
+        // End of Random Char Generation with Character length
+    
+      }
 
     // end of for
-    
+
+
   // return "This is where the results are of the code will be displayed"
-    return combinedArray;  
+    console.log ("PW should be in the box now");
+    return finalPassword;  
+    
+
   
     
 }
